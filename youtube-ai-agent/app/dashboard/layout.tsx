@@ -12,7 +12,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                 <Authenticated>
                     <Sidebar />
                 </Authenticated>
-                <div className='bg-red-50 flex-1'>
+                <div className='flex-1'>
                     <Header />
                     <main>
                         {children}
