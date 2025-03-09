@@ -1,6 +1,7 @@
 import { ChatGroq } from "@langchain/groq"
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
+import { StateGraph, START, END, MessagesAnnotation } from "@langchain/langgraph";
 
 // Customers at: https://introspection.apis.stepzen.com/customers
 // Comments at: https://dummyjson.com/comments
@@ -48,4 +49,10 @@ const initialiseModel = () => {
     }).bindTools(tools);
 
     return model;
+}
+
+
+const createWorkflow = () => {
+    const model = initialiseModel();
+    const stateGraph = new StateGraph(MessagesAnnotation);
 }
